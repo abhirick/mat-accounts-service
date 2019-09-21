@@ -6,4 +6,6 @@ import com.abhirick.matrimonial.model.Account;
 
 public interface AccountRepository extends MongoRepository<Account, String>, AccountCustomRepository {
 
+	Account findByUsername(String username);
+
 }

@@ -16,6 +16,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +43,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController
 @RequestMapping(value = "api/v1.0/accounts", produces = { "application/json" })
 @Validated
+@CrossOrigin
 public class AccountControllerImpl implements AccountController {
 
 	private final Logger log = LoggerFactory.getLogger(AccountControllerImpl.class);

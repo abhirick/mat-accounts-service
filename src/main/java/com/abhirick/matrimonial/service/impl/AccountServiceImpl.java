@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.abhirick.matrimonial.builder.GenericBuilder;
@@ -49,6 +50,9 @@ public class AccountServiceImpl implements AccountService {
 	
 	@Autowired
 	private ErrorResolver errorResolver;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	@Override
 	public RegistrationResponse initiateUserRegistration(final RegistrationRequest registrationRequest) {
@@ -130,6 +134,12 @@ public class AccountServiceImpl implements AccountService {
 					.with(Account::setHeight, registrationRequest.getRegistration().getData().getHeightInCM())
 					.with(Account::setFirstName, registrationRequest.getRegistration().getData().getFirstName())
 					.with(Account::setLastName, registrationRequest.getRegistration().getData().getLastName())
+					
+					.with(Account::setUsername, registrationRequest.getRegistration().getEmailId())
+					.with(Account::setActive, 1)
+					.with(Account::setPassword, passwordEncoder.encode(registrationRequest.getRegistration().getPassword()))
+					.with(Account::setRoles, "USER")
+					.with(Account::setPermissions, "ACCESS_GET,ACCESS_POST,ACCESS_DELETE,ACCESS_PATCH")
 					.build();
 
 			ObjectMapper mapper = new ObjectMapper();

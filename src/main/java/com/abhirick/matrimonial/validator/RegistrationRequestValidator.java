@@ -50,7 +50,7 @@ public class RegistrationRequestValidator implements RequestValidator {
 				ValidationUtils.rejectIfEmpty(errors, "dob", "MATRIMONY.ACCOUNT.Field.Missing", "dob is empty");
 				if (Optional.ofNullable(request.getRegistration().getData().getDob()).isPresent()) {
 					Date expTime = request.getRegistration().getData().getDob();
-					if (expTime.before(new Date())) {
+					if (!expTime.before(new Date())) {
 						errors.rejectValue("dob", "MATRIMONY.ACCOUNT.Field.InvalidDate", "The input data dob is invalid.");
 					}
 				}

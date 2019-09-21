@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.abhirick.matrimonial.repository.AccountCustomRepository;
 
 @Repository
-public class AccountRepositoryImpl implements AccountCustomRepository {
+public class AccountCustomRepositoryImpl implements AccountCustomRepository {
 
 	@Autowired
 	MongoTemplate mongoTemplate;

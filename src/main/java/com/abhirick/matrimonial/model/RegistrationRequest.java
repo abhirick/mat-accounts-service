@@ -5,6 +5,8 @@ import java.util.Date;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.abhirick.matrimonial.validator.PasswordMatches;
+import com.abhirick.matrimonial.validator.ValidEmail;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -18,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Validated
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_NULL)
+@PasswordMatches
 public class RegistrationRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -33,11 +36,15 @@ public class RegistrationRequest implements Serializable {
 
 		private static final long serialVersionUID = 1L;
 
+		@ValidEmail
 		@JsonProperty("EmailId")
 		private String emailId;
 
 		@JsonProperty("Password")
 		private String password;
+
+		@JsonProperty("MatchingPassword")
+		private String matchingPassword;
 
 		@JsonProperty("Data")
 		private AccountData data;
