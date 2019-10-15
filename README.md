@@ -41,6 +41,11 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
+For Lombok Installation : https://www.journaldev.com/18124/java-project-lombok
+For Mongo DB Installation : https://www.youtube.com/watch?v=DX15WbKidXY
+
+
+
 ## Documentation
 
 * [Postman Collection](https://documenter.getpostman.com/view/2449187/RWTiwzb2) - online, with code auto-generated snippets in cURL, jQuery, Ruby,Python Requests, Node, PHP and Go programming languages
