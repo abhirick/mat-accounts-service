@@ -24,7 +24,7 @@ A micro service which manages account details in a Matrimonial application.
 
 ## Running the application locally
 
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.arc.sbtest.SBtemplateApplication` class from your IDE.
+There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.abhirick.matrimonial.AccountsApplication` class from your IDE.
 
 - Download the zip or clone the Git repository.
 - Unzip the zip file (if you downloaded one)
@@ -33,7 +33,7 @@ There are several ways to run a Spring Boot application on your local machine. O
    - File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
    - Select the project
 - Choose the Spring Boot Application file (search for @SpringBootApplication)
-- Right Click on the file and Run as Java Application
+- Right Click on the file and Run as Spring Boot App.
 
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
@@ -57,29 +57,20 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 ├── src
 │   └── main
 │       └── java
-│           ├── com.arc.application
-│           ├── com.arc.application.config
-│           ├── com.arc.application.controller
-│           ├── com.arc.application.exception
-│           ├── com.arc.application.model
-│           ├── com.arc.application.util
-│           ├── com.arc.application.repository
-│           └── com.arc.application.service
+│           ├── com.abhirick.matrimonial
+│           ├── com.abhirick.matrimonial.config
+│           ├── com.abhirick.matrimonial.controller
+│           ├── com.abhirick.matrimonial.exception
+│           ├── com.abhirick.matrimonial.model
+│           ├── com.abhirick.matrimonial.util
+│           ├── com.abhirick.matrimonial.repository
+│           └── com.abhirick.matrimonial.service
 ├── src
 │   └── main
 │       └── resources
-│           └── static
-│           │   ├── css
-│           │   │   └── bootstrap.css
-│           │   ├── images
-│           │   ├── js
-│           │   ├── favicon.ico
-│           │   └── index.html
-│           ├── templates
-│           │   └── view.html
 │           ├── application.properties
 │           ├── banner.txt
-│           └── log4j2.xml
+│    
 ├── src
 │   └── test
 │       └── java
@@ -105,27 +96,8 @@ The project (a.k.a. project directory) has a particular directory structure. A r
 - `controllers` — to listen to the client;
 
 - `resources/` - Contains all the static resources, templates and property files.
-- `resources/static` - contains static resources such as css, js and images.
-- `resources/templates` - contains server-side templates which are rendered by Spring.
 - `resources/application.properties` - It contains application-wide properties. Spring reads the properties defined in this file to configure your application. You can define server’s default port, server’s context path, database URLs etc, in this file.
 
 - `test/` - contains unit and integration tests
 
 - `pom.xml` - contains all the project dependencies
- 
-## Reporting Issues
-
-This Project uses GitHub's integrated issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:
-
-* Before you log a bug, please https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/search?type=Issues[search the issue tracker]
-  to see if someone has already reported the problem.
-* If the issue doesn't already exist, https://github.com/AnanthaRajuC/Spring-Boot-Application-Template/issues/new[create a new issue]. 
-* Please provide as much information as possible with the issue report.
-* If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text. 
-  
-## Resources
-
-* [My API Lifecycle Checklist and Scorecard](https://dzone.com/articles/my-api-lifecycle-checklist-and-scorecard)
-* [HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
-* [Bootstrap w3schools](https://www.w3schools.com/bootstrap/)
-* [Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html)
